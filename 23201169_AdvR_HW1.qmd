@@ -2,7 +2,7 @@
 title: "Air Quality Analysis"
 subtitle: "STAT40830 - Advanced Data Programming With R"
 author: "Yashita Paras Jain - 23201169"
-date: "06/13/2024"
+date: "06/25/2024"
 format:
   revealjs:
     theme: beige
@@ -59,8 +59,8 @@ The 4 variables - [Ozone]{style="color: blue;"}, [solar radiation]{style="color:
 plot(airquality$Wind, airquality$Ozone, 
      xlab = "Wind Speed (mph)", ylab = "Ozone Level (ppb)", 
      main = "Scatter Plot of Ozone Levels vs. Wind Speed",
-     col = "blue", pch = 19)
-abline(lm(Ozone ~ Wind, data = airquality), col = "red")
+     col = "pink", pch = 24)
+abline(lm(Ozone ~ Wind, data = airquality), col = "purple")
 ```
 
 #### <span style="color: blue;"><i>Interpretation</i></span>
