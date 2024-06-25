@@ -88,7 +88,7 @@ summary(airquality$Ozone)
 - The mean ozone level is approximately 42.13 ppb, and the median is 31.50 ppb.
 - The interquartile range (IQR) is 45 ppb (63.25 - 18.25), indicating a wide variability in ozone levels.
 
-![Sustainability](https://saaccionasostenibilidad.blob.core.windows.net/media/816767/tierra-cubierta-por-capa-de-ozono.jpg)
+![Science Direct Vol 18,102809](https://ars.els-cdn.com/content/image/1-s2.0-S2352186422002784-ga1.jpg)
 
 ### <span style="color: brown;"><u>Wind Speed</u></span>
 
