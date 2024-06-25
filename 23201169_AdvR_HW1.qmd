@@ -1,0 +1,106 @@
+---
+title: "Air Quality Analysis"
+subtitle: "STAT40830 - Advanced Data Programming With R"
+author: "Yashita Paras Jain - 23201169"
+date: "06/13/2024"
+format:
+  revealjs:
+    theme: beige
+    toc: true
+    slide-number: true
+    transition: slide
+execute: 
+  eval: true
+  echo: false
+  warning: false
+fontsize: 15pt
+---
+
+## <span style="color: darkgreen;"><strong>Air Quality Overview</strong></span>
+
+Analysis of the **airquality** dataset using Quarto with RStudio is proposed. The dataset records daily air quality measurements in New York City from May to September 1973. It includes variables such as ozone concentration, wind speed, and temperature.
+
+Exploration of data, summary statistics and plot visualisation is done to understand the relationship between ozone levels and wind speed.
+
+![National Climate Assessment](https://nca2018.globalchange.gov/img/figure/figure13_1.png)
+
+## <span style="color: darkgreen;"><strong>Dataset Introduction</strong></span>
+
+```{r}
+#| label: airquality dataset 
+
+# Load the airquality dataset
+data(airquality) 
+head(airquality)
+
+```
+
+Has 153 observations on the following 6 variables:
+
+- Ozone: Ozone concentration (ppb)
+
+- Solar.R: Solar radiation (lang)
+
+- Wind: Wind speed (mph)
+
+- Temp: Temperature (degrees F)
+
+- Month: Month (1 = Jan, 2 = Feb, ..., 12 = Dec)
+
+- Day: Day of the month
+
+The 4 variables - [Ozone]{style="color: blue;"}, [solar radiation]{style="color: orange;"}, [wind]{style="color: brown;"} and [temperature]{style="color: red;"} are of important concern.
+
+## <span style="color: green;"><strong>Scatter Plot</strong></span>
+```{r}
+#| label: plot
+
+# Scatter plot - Ozone levels vs. Wind speed
+plot(airquality$Wind, airquality$Ozone, 
+     xlab = "Wind Speed (mph)", ylab = "Ozone Level (ppb)", 
+     main = "Scatter Plot of Ozone Levels vs. Wind Speed",
+     col = "blue", pch = 19)
+abline(lm(Ozone ~ Wind, data = airquality), col = "red")
+```
+
+#### <span style="color: blue;"><i>Interpretation</i></span>
+
+The above scatter plot displays the relationship between [wind speed]{style="color: brown;"} and [ozone levels]{style="color: blue;"}.
+
+- There seems to be a negative correlation between [wind speed]{style="color: brown;"} and [ozone levels]{style="color: blue;"}. Hence, as [wind speed]{style="color: brown;"} increases, [ozone levels]{style="color: blue;"} tend to decrease.
+- This inverse relationship might be due to the dispersal effect of wind, reducing the concentration of ozone in the air.
+- The red line represents the linear regression fit, reinforcing the negative trend between [wind speed]{style="color: brown;"} and [ozone levels]{style="color: blue;"}.
+- Data points are scattered, indicating variability in the relationship but still supporting the overall negative trend.
+
+The analysis provides insights into the impact of wind speed on air quality, particularly ozone concentration, in New York City.
+
+## <span style="color: green;"><strong>Statistical Summary</strong></span>
+### <span style="color: blue;"><u>Ozone Levels</u></span>
+
+```{r}
+#| label: summary ozone
+
+# Summary statistics for ozone levels
+summary(airquality$Ozone)
+```
+
+- Ozone levels range from 1 ppb to 168 ppb.
+- The mean ozone level is approximately 42.13 ppb, and the median is 31.50 ppb.
+- The interquartile range (IQR) is 45 ppb (63.25 - 18.25), indicating a wide variability in ozone levels.
+
+![Sustainability](https://saaccionasostenibilidad.blob.core.windows.net/media/816767/tierra-cubierta-por-capa-de-ozono.jpg)
+
+### <span style="color: brown;"><u>Wind Speed</u></span>
+
+```{r}
+#| label: summary wind
+
+# Summary statistics for wind speed
+summary(airquality$Wind)
+```
+
+- [Wind Speeds]{style="color: brown;"} range from 1.7 mph to 20.7 mph.
+- The mean wind speed is 9.96 mph, and the median is 9.70 mph.
+- The IQR is 3.35 mph (11.50 - 8.15), showing moderate variability in wind speeds.
+
+This presentation demonstrates how exploratory data analysis can be used to uncover important patterns and relationships in environmental datasets.
